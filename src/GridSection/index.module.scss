@@ -1,0 +1,41 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+//   height: 500px;
+}
+
+
+.boxText {
+  background: linear-gradient(90deg, #9c66ce, #f367ad);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+
+  h2 {
+    font-size:25px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size:18px;
+    line-height: 1.6;
+    font-weight: bold;
+  }
+}
+
+/* IMAGE BOX */
+.boxImage {
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

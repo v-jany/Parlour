@@ -1,0 +1,118 @@
+.container {
+  min-height: 100vh;
+  padding: 40px 8%;
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+}
+
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #db2777;
+  }
+
+  p {
+    color: #666;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: 0.5s;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 20px;
+  opacity: 0;
+  transition: 0.4s;
+
+  h2 {
+    margin-bottom: 5px;
+  }
+
+  p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: fit-content;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+
+    background: #ec4899;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover {
+      background: #db2777;
+    }
+  }
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+}

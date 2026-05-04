@@ -1,0 +1,207 @@
+.services {
+  padding: 80px 10%;
+  background: #f9f6ff;
+  text-align: center;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+
+  span {
+    color: #a855f7;
+  }
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #666;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+
+.card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+border-bottom:5px solid#ff4d6d;
+border-right:5px solid #ff4d6d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f3e8ff;
+  border-radius: 15px;
+  font-size: 28px;
+}
+
+.time {
+  display: inline-block;
+  background: #eee;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+
+.tag {
+  color: #ec4899;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.desc {
+  color: #666;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .services {
+    padding: 70px 8%;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .services {
+    padding: 60px 6%;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 35px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    padding: 25px 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .services {
+    padding: 50px 5%;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .desc {
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .services {
+    padding: 40px 4%;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .time {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .tag {
+    font-size: 11px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 20px 12px;
+  }
+}

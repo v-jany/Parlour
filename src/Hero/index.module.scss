@@ -1,0 +1,116 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: fade 9s infinite;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation-delay: 3s;
+}
+.slide:nth-child(3) {
+  animation-delay: 6s;
+}
+
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: white;
+
+  h2 {
+    font-size: 48px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+}
+@media (max-width: 1200px) {
+  .overlay h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .slider {
+    height: 80vh;
+  }
+
+  .overlay {
+    bottom: 18%;
+    left: 8%;
+  }
+
+  .overlay h2 {
+    font-size: 32px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 70vh;
+  }
+
+  .overlay {
+    bottom: 15%;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+  }
+
+  .overlay h2 {
+    font-size: 24px;
+    padding: 8px 12px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 60vh;
+  }
+
+  .overlay {
+    bottom: 12%;
+  }
+
+  .overlay h2 {
+    font-size: 18px;
+    padding: 6px 10px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .overlay h2 {
+    font-size: 16px;
+  }
+}

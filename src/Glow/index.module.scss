@@ -1,0 +1,205 @@
+.glow {
+  padding: 80px 10%;
+  background: #f9f6ff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+color: #ec4899;
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #666;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+
+.left {
+  position: relative;
+
+  img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+.badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+
+  font-weight: 600;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: left;
+}
+
+
+.item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+
+.icon {
+  width: 90px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #f3e8ff;
+  font-size: 20px;
+}
+
+
+.item h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.item p {
+  color:gray;
+  font-size:18px;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    text-align: center;
+  }
+
+  .item {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .right {
+    text-align: center;
+    align-items: center;
+  }
+
+  .item {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .icon {
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .glow {
+    padding: 60px 6%;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .item h4 {
+    font-size: 16px;
+  }
+
+  .item p {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .glow {
+    padding: 40px 5%;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .badge {
+    bottom: 10px;
+    left: 10px;
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .item h4 {
+    font-size: 14px;
+  }
+
+  .item p {
+    font-size: 13px;
+  }
+}

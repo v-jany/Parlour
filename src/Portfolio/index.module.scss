@@ -1,0 +1,257 @@
+
+
+
+.portSection {
+  padding: 80px 8%;
+  background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+  font-family: "Poppins", sans-serif;
+}
+
+.portHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.portSubtitle {
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: #ff4d6d;
+  font-weight: bold;
+}
+
+.portTitle {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  color: #333;
+
+  span {
+    color: #d63384;
+  }
+}
+
+.underline {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #ff85a2, #ff4d6d);
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+.portGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 20px;
+}
+
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.medium {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* CARD */
+.portItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* IMAGE */
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+  }
+}
+
+/* HOVER EFFECT */
+.portItem:hover img {
+  transform: scale(1.1);
+}
+
+/* OVERLAY */
+.portOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.portItem:hover .portOverlay {
+  opacity: 1;
+}
+
+/* OVERLAY CONTENT */
+.overlayContent {
+  text-align: center;
+  color: white;
+}
+
+.tagLabel {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #ffb6c1;
+}
+
+/* BUTTON */
+.viewBtn {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+  }
+}
+
+.portFooter {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.loadMore {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+
+  padding: 12px 30px;
+  border-radius: 30px;
+  color:white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+
+ 
+}
+
+@media (max-width: 1200px) {
+  .portGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 180px;
+  }
+
+  .portTitle {
+    font-size: 2.2rem;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .portSection {
+    padding: 60px 6%;
+  }
+
+  .portGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 170px;
+  }
+
+
+  .large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .medium {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .portTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portSection {
+    padding: 50px 5%;
+  }
+
+  .portGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+    gap: 15px;
+  }
+
+  .portHeader {
+    margin-bottom: 40px;
+  }
+
+  .portTitle {
+    font-size: 1.8rem;
+  }
+
+  .portSubtitle {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portSection {
+    padding: 40px 4%;
+  }
+
+  .portGrid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+
+
+  .large,
+  .medium,
+  .small {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .portTitle {
+    font-size: 1.5rem;
+  }
+
+  .portSubtitle {
+    font-size: 0.75rem;
+  }
+
+  .viewBtn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .portTitle {
+    font-size: 1.3rem;
+  }
+
+  .viewBtn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}

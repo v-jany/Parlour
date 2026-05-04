@@ -1,0 +1,158 @@
+.container {
+  font-family: "Poppins", sans-serif;
+}
+
+
+.hero {
+  height: 90vh;
+  background: url("./parlour.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.overlay {
+  background: rgba(10, 8, 8, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  max-width: 600px;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  button {
+    background:linear-gradient(90deg, #a855f7, #ec4899) ;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+.services {
+  padding: 70px 8%;
+  text-align: center;
+  background: #fff0f5;
+
+  h2 {
+    color: #d63384;
+    margin-bottom: 40px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+
+  span {
+    font-size: 2rem;
+  }
+
+  h3 {
+    margin: 10px 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight:bold;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.cta {
+  padding: 60px 20px;
+  text-align: center;
+  background:white;
+  color:#ff4d6d;;
+
+
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  .overlay {
+    padding: 25px;
+  }
+
+  .overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+  }
+
+  .overlay button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .cta button {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 400px) {
+  .overlay h1 {
+    font-size: 1.3rem;
+  }
+
+  .services h2 {
+    font-size: 1.5rem;
+  }
+}
