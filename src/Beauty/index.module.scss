@@ -77,16 +77,15 @@ font-family:'Times New Roman', Times, serif;
   }
 }
 
-
-
 .right {
   flex: 1;
   display: flex;
   justify-content: center;
 
   img {
-   width:600px;
-   height: 400px;
+   width:100%;
+   max-width:600px;
+   height:auto;
   object-fit: cover;
   border-radius:20px;
   }
@@ -103,8 +102,9 @@ font-family:'Times New Roman', Times, serif;
   }
 
   .right img {
-    width: 650px;
-    height: 420px;
+    width:100%;
+    max-width:600px;
+    height: auto;
   }
 }
 

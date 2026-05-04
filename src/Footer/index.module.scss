@@ -4,6 +4,10 @@ $text-main: #1a1a1a;
 $text-muted: #666;
 $border-color: rgba(201, 75, 255, 0.1);
 
+* {
+  box-sizing: border-box;
+}
+
 .ftSection {
   background: $bg-light;
   padding: 100px 10% 40px;
@@ -169,113 +173,74 @@ $border-color: rgba(201, 75, 255, 0.1);
   }
 }
 
-
 @media (max-width: 1200px) {
   .ftSection {
-    padding: 90px 8% 40px;
+    padding: 80px 8% 40px;
+  }
 
-    .ftContainer {
-      gap: 50px;
-    }
+  .ftContainer {
+    gap: 40px;
   }
 }
 
 @media (max-width: 992px) {
-  .ftSection {
-    padding: 80px 6% 40px;
+  .ftContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
 
-    .ftContainer {
-      grid-template-columns: 1fr;
-      text-align: center;
-      gap: 40px;
-    }
+  .ftBrand {
+    grid-column: span 2;
+    text-align: center;
+  }
 
-    .ftBrand p {
-      margin: 0 auto 25px;
-    }
-
-    .ftSocials {
-      justify-content: center;
-    }
-
-    .ftLinks h3::after,
-    .ftContact h3::after {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .ftContact p {
-      justify-content: center;
-    }
+  .ftSocials {
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
-  .ftSection {
-    padding: 70px 5% 30px;
+  .ftContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-    .ftBottom {
-      flex-direction: column;
-      gap: 10px;
-      text-align: center;
-    }
+  .ftBrand p {
+    margin: 0 auto 20px;
+  }
+
+  .ftLinks h3::after,
+  .ftContact h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ftContact p {
+    justify-content: center;
+  }
+
+  .ftBottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .ftSection {
-    padding: 60px 4% 25px;
-
-    .ftBrand .ftLogo {
-      font-size: 1.8rem;
-    }
-
-    .ftLinks h3,
-    .ftContact h3 {
-      font-size: 1rem;
-    }
-
-    .ftLinks ul li a,
-    .ftContact p {
-      font-size: 0.85rem;
-    }
-  }
-}
-
-@media (max-width: 360px) {
-  .ftSection {
-    padding: 50px 3% 20px;
-
-    .ftBrand .ftLogo {
-      font-size: 1.6rem;
-    }
-
-    .ftLinks ul li a {
-      font-size: 0.8rem;
-    }
-  }
-}
-
-@media (max-width: 320px) {
-  .ftSection {
-    padding: 30px 8px;
-    text-align: center;
+    padding: 50px 15px;
   }
 
-  .ftSection .ftBrand .ftLogo {
-    font-size: 1.4rem;
+  .ftLogo {
+    font-size: 1.6rem;
   }
 
-  .ftSection .ftLinks ul{
-    padding: 0;
-    margin:10px 0;
+  .ftLinks h3 {
+    font-size: 1rem;
   }
 
-  .ftSection .ftLinks ul li{
-    margin-bottom:6px;
-  }
-
-  .ftSection .ftLinks ul li a{
-    font-size: 0.75rem;
+  .ftLinks ul li a,
+  .ftContact p {
+    font-size: 0.85rem;
   }
 }
