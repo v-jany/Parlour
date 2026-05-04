@@ -82,14 +82,138 @@
   opacity: 0.2;
 }
 
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+// @media (max-width: 768px) {
+//   .cards {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// }
 
 
+
+// @media (max-width: 1200px) {
+//   .title {
+//     font-size: 30px;
+//   }
+
+//   .cards {
+//     gap: 25px;
+//   }
+
+//   .card {
+//     width: 260px;
+//   }
+// }
+
+// @media (max-width: 992px) {
+//   .wrapper {
+//     padding: 70px 20px;
+//   }
+
+//   .title {
+//     font-size: 28px;
+//   }
+
+//   .sub {
+//     font-size: 13px;
+//   }
+
+//   .cards {
+//     gap: 20px;
+//   }
+
+//   .card {
+//     width: 240px;
+//     padding: 25px 18px;
+//   }
+
+//   .card h3 {
+//     font-size: 18px;
+//   }
+
+//   .card p {
+//     font-size: 13px;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .wrapper {
+//     padding: 60px 15px;
+//   }
+
+//   .title {
+//     font-size: 26px;
+//   }
+
+//   .cards {
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 18px;
+//   }
+
+//   .card {
+//     width: 100%;          
+//     max-width: 350px;
+//     padding: 22px;
+//   }
+
+//   .number {
+//     font-size: 24px;
+//     right: 15px;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .wrapper {
+//     padding: 50px 10px;
+//   }
+
+//   .title {
+//     font-size: 22px;
+//   }
+
+//   .sub {
+//     font-size: 12px;
+//     letter-spacing: 1.5px;
+//   }
+
+//   .card {
+//     max-width: 100%;
+//     padding: 18px;
+//     border-radius: 15px;
+//   }
+
+//   .card h3 {
+//     font-size: 16px;
+//   }
+
+//   .card p {
+//     font-size: 12px;
+//   }
+
+//   .number {
+//     font-size: 20px;
+//     bottom: 10px;
+//   }
+// }
+
+// @media (max-width: 360px) {
+//   .title {
+//     font-size: 20px;
+//   }
+
+//   .card {
+//     padding: 15px;
+//   }
+
+//   .card h3 {
+//     font-size: 15px;
+//   }
+
+//   .card p {
+//     font-size: 11px;
+//   }
+// }
 
 @media (max-width: 1200px) {
   .title {
@@ -152,7 +276,7 @@
   }
 
   .card {
-    width: 100%;          
+    width: 100%;
     max-width: 350px;
     padding: 22px;
   }
@@ -178,7 +302,6 @@
   }
 
   .card {
-    max-width: 100%;
     padding: 18px;
     border-radius: 15px;
   }
