@@ -2,12 +2,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Beauty from "./Beauty";
 import Beautysalon from "./Beautysalon";
-import BentoGallery from "./BentoGallery";
+
 
 import Consultation from "./Consultation";
 import Footer from "./Footer";
 import Glow from "./Glow";
-// import GridSection from "./GridSection";
+
 import Hairtheraphy from "./Hairtheraphy";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
@@ -44,7 +44,7 @@ function App() {
             <Beautysalon />
             <Hairtheraphy />
             <Steps />
-            {/* <BentoGallery /> */}
+          
             <Footer />
           </>
         } />
