@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+}
+
+
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -152,16 +157,21 @@ font-family:'Times New Roman', Times, serif;
   }
 }
 @media (max-width: 768px) {
+  .container{
+    padding:20px 15px;
+    gap:20px;
+  }
   .hero {
-    padding: 40px 0;
+    min-height:auto;
+    padding: 20px 0;
   }
 
   .left h1 {
-    font-size: 34px;
+    margin-top:0;
   }
 
   .left p {
-    font-size: 15px;
+   margin-bottom:10px;
   }
 
   .buttons {
