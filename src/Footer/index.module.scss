@@ -173,74 +173,94 @@ $border-color: rgba(201, 75, 255, 0.1);
   }
 }
 
+
 @media (max-width: 1200px) {
   .ftSection {
     padding: 80px 8% 40px;
-  }
 
-  .ftContainer {
-    gap: 40px;
+    .ftContainer {
+      gap: 40px;
+    }
   }
 }
 
 @media (max-width: 992px) {
-  .ftContainer {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
+  .ftSection {
+    .ftContainer {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
 
-  .ftBrand {
-    grid-column: span 2;
-    text-align: center;
-  }
+    .ftBrand {
+      grid-column: span 2;
+      text-align: center;
 
-  .ftSocials {
-    justify-content: center;
+      .ftSocials {
+        justify-content: center;
+      }
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .ftContainer {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+  .ftSection {
+    .ftContainer {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
 
-  .ftBrand p {
-    margin: 0 auto 20px;
-  }
+    .ftBrand {
+      p {
+        margin: 0 auto 20px;
+      }
+    }
 
-  .ftLinks h3::after,
-  .ftContact h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
+    .ftLinks,
+    .ftContact {
+      h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
 
-  .ftContact p {
-    justify-content: center;
-  }
+    .ftContact {
+      p {
+        justify-content: center;
+      }
+    }
 
-  .ftBottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
+    .ftBottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
   }
 }
 
 @media (max-width: 480px) {
   .ftSection {
     padding: 50px 15px;
-  }
 
-  .ftLogo {
-    font-size: 1.6rem;
-  }
+    .ftBrand {
+      .ftLogo {
+        font-size: 1.6rem;
+      }
+    }
 
-  .ftLinks h3 {
-    font-size: 1rem;
-  }
+    .ftLinks {
+      h3 {
+        font-size: 1rem;
+      }
 
-  .ftLinks ul li a,
-  .ftContact p {
-    font-size: 0.85rem;
+      ul li a {
+        font-size: 0.85rem;
+      }
+    }
+
+    .ftContact {
+      p {
+        font-size: 0.85rem;
+      }
+    }
   }
 }
