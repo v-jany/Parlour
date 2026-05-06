@@ -1,0 +1,21 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.scroll-section {
+  scroll-margin-top: 88px;
+}
+
+@media (max-width: 768px) {
+  .scroll-section {
+    scroll-margin-top: 76px;
+  }
+}

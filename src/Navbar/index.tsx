@@ -1,57 +1,3 @@
-
-
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import styles from "./index.module.scss";
-
-// const Navbar: React.FC = () => {
-//   const [open, setOpen] = useState(false);
-//   const navigate = useNavigate();
-
-//   const goTo = (path: string) => {
-//     navigate(path);
-//     setOpen(false); 
-//   };
-
-//   return (
-//     <nav className={styles.navbar}>
-      
-//       <div className={styles.logo}>
-//         <h2>Glow Beauty✨</h2>
-//       </div>
-
-//       <ul className={`${styles.menu} ${open ? styles.active : ""}`}>
-//         <li><a onClick={() => goTo("/Beauty")}>Home</a></li>
-//         <li><a onClick={() => goTo("/Glow")}>About Us</a></li>
-//         <li><a onClick={() => goTo("/skincare")}>Skin Care</a></li>
-//         <li><a onClick={() => goTo("/haircare")}>Hair Care</a></li>
-//         <li><a onClick={() => goTo("/Booking")}>Contact Us</a></li>
-//       </ul>
-
-      
-//       <div
-//         className={styles.hamburger}
-//         onClick={() => setOpen(!open)}
-//       >
-//         {open ? "✖" : "☰"}
-//       </div>
-
-      
-//       <div className={styles.actions}>
-//         <button onClick={() => navigate("/Booknow")}>
-//           Book Now
-//         </button>
-//       </div>
-
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./index.module.scss";
@@ -60,6 +6,14 @@ type ScrollState = {
   scrollTo?: string;
 };
 
+const NAV_ITEMS = [
+  { label: "Home", id: "home" },
+  { label: "About Us", id: "about" },
+  { label: "Skin Care", id: "skincare" },
+  { label: "Hair Care", id: "haircare" },
+  { label: "Contact Us", id: "contact" },
+] as const;
+
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -67,23 +21,53 @@ const Navbar: React.FC = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    if (!element) {
+      return false;
     }
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    window.history.replaceState(
+      window.history.state,
+      "",
+      `${window.location.pathname}#${id}`,
+    );
+
+    return true;
+  };
+
+  const scrollToSectionWhenReady = (id: string) => {
+    let attempts = 0;
+    const maxAttempts = 24;
+
+    const tryScroll = () => {
+      const didScroll = scrollToSection(id);
+      if (didScroll || attempts >= maxAttempts) {
+        return;
+      }
+
+      attempts += 1;
+      window.requestAnimationFrame(tryScroll);
+    };
+
+    window.setTimeout(() => {
+      window.requestAnimationFrame(tryScroll);
+    }, 0);
   };
 
   const goToSection = (id: string) => {
     setOpen(false);
 
     if (location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: id } });
+      const nextState: ScrollState = { scrollTo: id };
+      navigate("/", { state: nextState });
       return;
     }
 
-    scrollToSection(id);
+    scrollToSectionWhenReady(id);
   };
 
   const goToPage = (path: string) => {
@@ -92,57 +76,49 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    const state = location.state as ScrollState | null;
-
-    if (location.pathname === "/" && state?.scrollTo) {
-      const timer = window.setTimeout(() => {
-        scrollToSection(state.scrollTo!);
-      }, 100);
-
-      return () => window.clearTimeout(timer);
+    if (location.pathname !== "/") {
+      return;
     }
-  }, [location]);
+
+    const state = location.state as ScrollState | null;
+    const sectionId = state?.scrollTo ?? location.hash.replace("#", "");
+
+    if (!sectionId) {
+      return;
+    }
+
+    scrollToSectionWhenReady(sectionId);
+  }, [location.hash, location.pathname, location.state]);
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <h2>Glow Beauty✨</h2>
+        <h2>Glow Beauty</h2>
       </div>
 
       <ul className={`${styles.menu} ${open ? styles.active : ""}`}>
-        <li>
-          <button type="button" onClick={() => goToSection("home")}>
-            Home
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={() => goToSection("about")}>
-            About Us
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={() => goToSection("skincare")}>
-            Skin Care
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={() => goToSection("haircare")}>
-            Hair Care
-          </button>
-        </li>
-        <li>
-          <button type="button" onClick={() => goToSection("contact")}>
-            Contact Us
-          </button>
-        </li>
+        {NAV_ITEMS.map((item) => (
+          <li key={item.id}>
+            <button type="button" onClick={() => goToSection(item.id)}>
+              {item.label}
+            </button>
+          </li>
+        ))}
       </ul>
 
-      <div className={styles.hamburger} onClick={() => setOpen(!open)}>
-        {open ? "✖" : "☰"}
-      </div>
+      <button
+        type="button"
+        className={styles.hamburger}
+        onClick={() => setOpen((previousOpen) => !previousOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        {open ? "X" : "Menu"}
+      </button>
 
       <div className={styles.actions}>
-        <button onClick={() => goToPage("/Booknow")}>Book Now</button>
+        <button type="button" onClick={() => goToPage("/Booknow")}>
+          Book Now
+        </button>
       </div>
     </nav>
   );
